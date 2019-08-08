@@ -29,6 +29,24 @@ constructor(){
                     en:"web developer",
                 }
             },
+            skills:{
+                h1:{
+                    pl:"Technologie z którymi pracuję",
+                    en:"Technology stack",
+                },
+                h2:{
+                    pl:"Języki programowania",
+                    en:"Programming languages",
+                },
+                h3:{
+                    pl:"Frameworki",
+                    en:"Frameworks",
+                },
+                h4:{
+                    pl:"Narzędzia",
+                    en:"Tools",
+                }
+            },
         }
     }
 }
@@ -40,6 +58,7 @@ switchLangague(langague){
 }
 
 render(){       
+    console.log("rendered")
     return(
         <Router>
             <Menu lang={this.state.langague} menu={this.state.content.menu} switchLangague={this.switchLangague.bind(this)}/>
@@ -49,7 +68,7 @@ render(){
             />    
             <Route 
                 path="/skills/" 
-                render={()=><Skills lang={this.state.langague} about={this.state.content.about} />}
+                render={()=><Skills lang={this.state.langague} skills={this.state.content.skills} />}
                 />
             
             <Route path="/portfolio/" component={Portfolio} />
