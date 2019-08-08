@@ -5,13 +5,16 @@ export default function Menu(props) {
   function toggleColapse() {
     document.getElementById('colapser').classList.toggle("change");
   }
+  function close() {
+    document.getElementById('navbarColor03').classList.toggle("show");
+  }
     
-    return(     
+  return(     
     <Router>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand typewriter" href="#">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"  onClick={toggleColapse} data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" >
+        <a class="navbar-brand typewriter" href="#" >
           <h4>Rafał Malenta</h4></a>
-            <button id="colapser" onClick={toggleColapse}class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="colapser" class="navbar-toggler" type="button" >
               <div class="bar1"></div>
               <div class="bar2"></div>
               <div class="bar3"></div>         
