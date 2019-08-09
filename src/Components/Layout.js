@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Redirect} from "react-router-dom";
 import Menu from "./Menu";
 import About from "../views/About";
 import Contact from "../views/Contact";
@@ -57,20 +57,24 @@ switchLangague(langague){
     this.setState({langague: array})
 }
 
-render(){       
-    console.log("rendered")
+render(){           
     return(
         <Router>
-            <Menu lang={this.state.langague} menu={this.state.content.menu} switchLangague={this.switchLangague.bind(this)}/>
+            <Route exact path="/" render={() =>  <Redirect to="/pl/" />}
+                />
+            <Route path="/:lang/:section?" 
+                render={(props)=>
+                    <Menu { ...props } menu={this.state.content.menu} switchLangague={this.switchLangague.bind(this)}/> }                
+            />
+           
             <div class="viewcontainer ">
-            <Route exact path="/" 
-            render={()=><About lang={this.state.langague} about={this.state.content.about} />}
-            />    
+            <Route  path="/:lang/" 
+                render={(props)=><About { ...props } lang={this.state.langague} about={this.state.content.about} />}
+                />    
             <Route 
                 path="/skills/" 
                 render={()=><Skills lang={this.state.langague} skills={this.state.content.skills} />}
-                />
-            
+                />            
             <Route path="/portfolio/" component={Portfolio} />
             <Route path="/kontakt/" component={Contact} />         
          </div> 

@@ -1,14 +1,27 @@
 import React from 'react'
 import {HashRouter as Router, Link } from "react-router-dom";
 
-export default function Menu(props) {  
-  function toggleColapse() {
+export default function Menu(props) { 
+  //console.log(props.match)
+  var section = props.match.params.section || "";
+  var langage = props.match.params.lang;
+  
+  function toggleColapse() {    
     document.getElementById('colapser').classList.toggle("change");
   }
-  function close() {
-    document.getElementById('navbarColor03').classList.toggle("show");
-  }
-    
+  
+  function otherLangague(langagueShort){
+    if(langagueShort==="en")
+      return "pl";
+    else
+      return "en"
+  };
+  function langagueName(langagueShort){
+    if(langagueShort==="pl")
+      return "Polski";
+    else
+      return "English"
+  };  
   return(     
     <Router>
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"  onClick={toggleColapse} data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" >
@@ -22,15 +35,16 @@ export default function Menu(props) {
         <div class="collapse navbar-collapse" id="navbarColor03">
           <ul class="navbar-nav col-lg-12">
             <li class="nav-item col-lg-3 ">
-              <Link to="skills" class="nav-link">{props.menu.li[props.lang[0]][0]} </Link>
+              <Link to= {`/${langage}/skills`} replace class="nav-link">{props.menu.li[langage][0]} </Link>
             </li>
             <li class="nav-item col-lg-3">
-              <Link to="portfolio" class="nav-link">{props.menu.li[props.lang[0]][1]}</Link>
+              <Link to={`/${langage}/portfolio`} class="nav-link">{props.menu.li[langage][1]}</Link>
             </li>
             <li class="nav-item col-lg-3">
-              <Link to="kontakt" class="nav-link">{props.menu.li[props.lang[0]][2]}</Link>
+              <Link to={`/${langage}/kontakt`} class="nav-link">{props.menu.li[langage][2]}</Link>
             </li>
-           <li class="nav-item col-lg-3 nav-link " onClick={()=>props.switchLangague(props.lang[0])}  >{props.lang[1]}</li>
+           <li class="nav-item col-lg-3" >
+           <Link class="nav-link" to={`/${otherLangague(langage)}/${section}`}> {langagueName(otherLangague(langage))} </Link></li>
           </ul>    
         </div>
       </nav>
