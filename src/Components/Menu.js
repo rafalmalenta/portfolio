@@ -25,8 +25,8 @@ export default function Menu(props) {
   return(     
     <Router>
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"  onClick={toggleColapse} data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" >
-        <a class="navbar-brand typewriter" href="#" >
-          <h4>Rafał Malenta</h4></a>
+        <Link to={`/${langage}`}class="navbar-brand typewriter"  >
+          <h4>Rafał Malenta</h4></Link>
             <button id="colapser" class="navbar-toggler" type="button" >
               <div class="bar1"></div>
               <div class="bar2"></div>

@@ -1,23 +1,14 @@
 import React from "react";
 
 
-export default function Skills(props){
-       //console.log(props.skills.h1);
-       //console.log(props.lang)
-   function fadein(){
-      var x = document.getElementsByClassName("fadein");
-      //x.forEach(element => {        
-      
-        // element.style.opacity=0
-      //})
-      //console.log(x)
-   };
-   fadein();
+export default function Skills(props){      
+   var langague = props.match.params.lang;   
+  
     return(
        <div class="container-fluid">
          <div class="col-12">
-            <h1>{props.skills.h1[props.lang[0]]}</h1>
-            <h2>{props.skills.h2[props.lang[0]]}</h2>
+            <h1>{props.skills.h1[langague]}</h1>
+            <h2>{props.skills.h2[langague]}</h2>
          </div>
          <div class="row d-flex justify-content-center">
             <div class="col-lg-2 col-md-3 col-sm-6 text-center fadein">HTML5
@@ -34,7 +25,7 @@ export default function Skills(props){
             </div>
          </div>
          <div class="col-12">            
-            <h2>{props.skills.h3[props.lang[0]]}</h2>
+            <h2>{props.skills.h3[langague]}</h2>
          </div>
          <div class="row d-flex justify-content-center">
             <div class="col-lg-2 col-md-3 col-sm-6 text-center fadein">React
@@ -45,7 +36,7 @@ export default function Skills(props){
             </div>
          </div>
          <div class="col-12">            
-            <h2>{props.skills.h4[props.lang[0]]}</h2>
+            <h2>{props.skills.h4[langague]}</h2>
          <div>
             
          </div>

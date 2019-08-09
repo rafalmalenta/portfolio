@@ -10,8 +10,7 @@ import Skills from "../views/Skills";
 export default class Layout extends React.Component{
 constructor(){
     super();  
-    this.state={
-        langague: ["pl","en"],
+    this.state={        
         content:{
             menu:{
                 li:{
@@ -64,16 +63,15 @@ render(){
                 />
             <Route path="/:lang/:section?" 
                 render={(props)=>
-                    <Menu { ...props } menu={this.state.content.menu} switchLangague={this.switchLangague.bind(this)}/> }                
-            />
-           
+                    <Menu { ...props } menu={this.state.content.menu} /> }                
+            />           
             <div class="viewcontainer ">
-            <Route  path="/:lang/" 
-                render={(props)=><About { ...props } lang={this.state.langague} about={this.state.content.about} />}
+            <Route path="/:lang/" 
+                render={(props)=><About { ...props } about={this.state.content.about} />}
                 />    
             <Route 
-                path="/skills/" 
-                render={()=><Skills lang={this.state.langague} skills={this.state.content.skills} />}
+                path="/:lang/skills" 
+                render={(props)=><Skills { ...props } skills={this.state.content.skills} />}
                 />            
             <Route path="/portfolio/" component={Portfolio} />
             <Route path="/kontakt/" component={Contact} />         
