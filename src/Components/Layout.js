@@ -66,7 +66,7 @@ render(){
                     <Menu { ...props } menu={this.state.content.menu} /> }                
             />           
             <div class="viewcontainer ">
-            <Route path="/:lang/" 
+            <Route exact path="/:lang/" 
                 render={(props)=><About { ...props } about={this.state.content.about} />}
                 />    
             <Route 
