@@ -1,13 +1,14 @@
 @import './typewriter'
 @import './rotate'
 @import './about'
+@import './contact'
 
 html 
     overflow-x: hidden
 body 
     margin-left: auto
     margin-right: auto
-    margin-top: 160px 
+    padding-top: 160px 
     width: 100% 
     height: 100vh   
     position: relative 
@@ -37,10 +38,9 @@ nav
   -webkit-transform: rotate(45deg) translate(-8px, -8px) 
   transform: rotate(45deg) translate(-8px, -8px) 
 
-.viewcontainer   
-    //padding-top: 20%
+.viewcontainer  
     width: 80%    
-    min-height: 90vh   
+    min-height: 70vh   
     margin-left: auto
     margin-right: auto
     
@@ -48,7 +48,7 @@ nav
   padding: 0px 0px 0px 0px
   
   //border: 1px solid blue
-.fadein
+.rotate
   //opacity: 0
   transition-duration: 4s
   animation: rotate 3.5s infinite alternate

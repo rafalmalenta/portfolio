@@ -46,6 +46,7 @@ constructor(){
                     en:"Tools",
                 }
             },
+            
         }
     }
 }
@@ -60,7 +61,7 @@ render(){
     return(
         <Router>
             <Route exact path="/" render={() =>  <Redirect to="/pl/" />}
-                />
+                />              
             <Route path="/:lang/:section?" 
                 render={(props)=>
                     <Menu { ...props } menu={this.state.content.menu} /> }                
@@ -74,7 +75,9 @@ render(){
                 render={(props)=><Skills { ...props } skills={this.state.content.skills} />}
                 />            
             <Route path="/portfolio/" component={Portfolio} />
-            <Route path="/kontakt/" component={Contact} />         
+            <Route path="/:lang/kontakt/"
+                render={(props)=><Contact {...props} />} 
+                />         
          </div> 
          <Footer />      
         </Router>
