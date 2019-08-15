@@ -1,6 +1,6 @@
-import React from "react";
+import React,{useEffect} from "react";
 
-export default function Contact(props){
+export default function Contact(props){  
    var contact = {
       header:{
           pl:"Napisz do mnie",

@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
 import * as THREE from "three"
 
-export default function About(props){
+function About(props){
+    useEffect(() => {
+        render()
+      }, [])
     var langague = props.match.params.lang;
     const about = {
         h1:{
@@ -13,46 +16,58 @@ export default function About(props){
             pl:"web developer",
             en:"web developer",
         }
-    };
+    };   
     function render(){
             var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-
+            var xax = document.getElementById("rendererFather");
             var renderer = new THREE.WebGLRenderer();
             
-            renderer.setSize( window.innerWidth, window.innerHeight );
+            renderer.setSize( xax.offsetWidth, xax.offsetWidth );
             renderer.setClearColor( 0xffffff )
-            var xax = document.getElementById("rendererFather");
+            
 			xax.appendChild( renderer.domElement );
 
-			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var material = new THREE.MeshBasicMaterial( { color: 0xaaff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
+            var geometry = new THREE.ConeGeometry( 3, 3, 4 );
+            var material = new THREE.MeshLambertMaterial ( { color: 0xffffff } );
+            var cone = new THREE.Mesh( geometry, material );
+            material = new THREE.MeshLambertMaterial ( { color: 0x11ffff } );
+            var cone2 = new THREE.Mesh( geometry, material );
+            cone2.rotation.x = 3.14;
+            cone2.position.y = 1
+           
+            scene.add( cone );
+            scene.add( cone2 )
+            var light = new THREE.PointLight( 0x11ffff, 1, 100 );
+            light.position.set( 3, 3, 3);
+            scene.add( light );
 
-			camera.position.z = 5;
+            light = new THREE.PointLight( 0xffffff, 1, 100 );
+            light.position.set( -3, -3, 3 );
+            scene.add( light );
+			
+			camera.position.z = 6;
 
 			var animate = function () {
 				requestAnimationFrame( animate );
-
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
+                cone.rotation.y += 0.01;
+                cone2.rotation.y -= 0.01;
 				renderer.render( scene, camera );
 			};
 
-			animate();
-        console.log("ratatata")
-    };   //console.log(props)
-    //console.log(to)
+			animate();       
+    };   
+    
     return(
-        <div class="container">
+        <div id="rendererFather" class="container">
             <div class="about">
                 <h1>{about.h1[langague]}</h1>
                 <h2>{about.h2[langague]}</h2>
-            </div>
-            <div onClick={render} class="col-sm-12" id="rendererFather">dasdas
-            </div>
+            </div>   
        </div>
     )
   
 }
+
+
+export default About

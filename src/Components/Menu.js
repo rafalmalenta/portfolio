@@ -1,7 +1,8 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {HashRouter as Router, Link } from "react-router-dom";
 
 export default function Menu(props) { 
+  
   var section = props.match.params.section || "";
   var langage = props.match.params.lang;
   
