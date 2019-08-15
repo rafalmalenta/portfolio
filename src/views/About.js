@@ -4,8 +4,18 @@ import * as THREE from "three"
 
 export default function About(props){
     var langague = props.match.params.lang;
+    const about = {
+        h1:{
+            pl:"Rafał Malenta ",
+            en:"Rafał Malenta ",
+        },
+        h2:{
+            pl:"web developer",
+            en:"web developer",
+        }
+    };
     function render(){
-        var scene = new THREE.Scene();
+            var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
 
             var renderer = new THREE.WebGLRenderer();
@@ -37,8 +47,8 @@ export default function About(props){
     return(
         <div class="container">
             <div class="about">
-                <h1>{props.about.h1[langague]}</h1>
-                <h2>{props.about.h2[langague]}</h2>
+                <h1>{about.h1[langague]}</h1>
+                <h2>{about.h2[langague]}</h2>
             </div>
             <div onClick={render} class="col-sm-12" id="rendererFather">dasdas
             </div>

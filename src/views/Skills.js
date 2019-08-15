@@ -2,13 +2,31 @@ import React from "react";
 
 
 export default function Skills(props){      
-   var langague = props.match.params.lang;   
+   var langague = props.match.params.lang;  
+   const skills = {
+      h1:{
+          pl:"Technologie z którymi pracuję",
+          en:"Technology stack",
+      },
+      h2:{
+          pl:"Języki programowania",
+          en:"Programming languages",
+      },
+      h3:{
+          pl:"Frameworki",
+          en:"Frameworks",
+      },
+      h4:{
+          pl:"Narzędzia",
+          en:"Tools",
+      }
+  };
   
     return(
        <div class="container-fluid">
          <div class="col-12">
-            <h1>{props.skills.h1[langague]}</h1>
-            <h2>{props.skills.h2[langague]}</h2>
+            <h1>{skills.h1[langague]}</h1>
+            <h2>{skills.h2[langague]}</h2>
          </div>
          <div class="row d-flex justify-content-center">
             <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">HTML5
@@ -25,7 +43,7 @@ export default function Skills(props){
             </div>
          </div>
          <div class="col-12">            
-            <h2>{props.skills.h3[langague]}</h2>
+            <h2>{skills.h3[langague]}</h2>
          </div>
          <div class="row d-flex justify-content-center">
             <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">React
@@ -36,7 +54,7 @@ export default function Skills(props){
             </div>
          </div>
          <div class="col-12">            
-            <h2>{props.skills.h4[langague]}</h2>
+            <h2>{skills.h4[langague]}</h2>
          <div>
          <div class="row d-flex justify-content-center">
             <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">Webpack

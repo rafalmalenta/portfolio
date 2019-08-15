@@ -10,46 +10,8 @@ import Skills from "../views/Skills";
 export default class Layout extends React.Component{
 constructor(props){
     super(props);  
-    this.state={        
-        content:{
-            menu:{
-                li:{
-                    pl:["Umiejętności","Portfolio","Kontakt"],
-                    en:["Skills","Portfolio","Contact"],
-                },
-            },
-            about:{
-                h1:{
-                    pl:"Rafał Malenta ",
-                    en:"Rafał Malenta ",
-                },
-                h2:{
-                    pl:"web developer",
-                    en:"web developer",
-                }
-            },
-            skills:{
-                h1:{
-                    pl:"Technologie z którymi pracuję",
-                    en:"Technology stack",
-                },
-                h2:{
-                    pl:"Języki programowania",
-                    en:"Programming languages",
-                },
-                h3:{
-                    pl:"Frameworki",
-                    en:"Frameworks",
-                },
-                h4:{
-                    pl:"Narzędzia",
-                    en:"Tools",
-                }
-            },
-            
-        }
     }
-}
+
 switchLangague(langague){
     var array;
     if (langague==="pl") array = ["en","pl"];
@@ -68,18 +30,18 @@ render(){
                 render={(props)=>{
                     let langague = props.match.params.lang;                      
                     if((langague === "pl") || (langague==="en"))                                    
-                        return <Menu { ...props } menu={this.state.content.menu} />
+                        return <Menu { ...props }  />
                     else 
                         return <Redirect to="/pl/" />    
                 }}               
             />           
             <div class="viewcontainer ">
             <Route exact path="/:lang/" 
-                render={(props)=><About { ...props } about={this.state.content.about} />}
+                render={(props)=><About { ...props }  />}
                 />    
             <Route 
                 path="/:lang/skills" 
-                render={(props)=><Skills { ...props } skills={this.state.content.skills} />}
+                render={(props)=><Skills { ...props }  />}
                 />            
             <Route path="/:lang/portfolio/" component={Portfolio} />
             <Route path="/:lang/kontakt/"

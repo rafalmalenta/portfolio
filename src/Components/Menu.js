@@ -2,11 +2,16 @@ import React from 'react'
 import {HashRouter as Router, Link } from "react-router-dom";
 
 export default function Menu(props) { 
-  //console.log(props.match)
-  var section = props.match.params.section;
-  console.log(props.match)
+  var section = props.match.params.section || "";
   var langage = props.match.params.lang;
   
+  const menu = {
+    li:{
+        pl:["Umiejętności","Portfolio","Kontakt"],
+        en:["Skills","Portfolio","Contact"],
+    },
+  };
+
   function toggleColapse() {    
     document.getElementById('colapser').classList.toggle("change");
   }
@@ -36,13 +41,13 @@ export default function Menu(props) {
         <div class="collapse navbar-collapse" id="navbarColor03">
           <ul class="navbar-nav col-lg-12">
             <li class="nav-item col-lg-3 ">
-              <Link to= {`/${langage}/skills`} replace class="nav-link">{props.menu.li[langage][0]} </Link>
+              <Link to= {`/${langage}/skills`} replace class="nav-link">{menu.li[langage][0]} </Link>
             </li>
             <li class="nav-item col-lg-3">
-              <Link to={`/${langage}/portfolio`} class="nav-link">{props.menu.li[langage][1]}</Link>
+              <Link to={`/${langage}/portfolio`} class="nav-link">{menu.li[langage][1]}</Link>
             </li>
             <li class="nav-item col-lg-3">
-              <Link to={`/${langage}/kontakt`} class="nav-link">{props.menu.li[langage][2]}</Link>
+              <Link to={`/${langage}/kontakt`} class="nav-link">{menu.li[langage][2]}</Link>
             </li>
            <li class="nav-item col-lg-3" >
            <Link class="nav-link" to={`/${otherLangague(langage)}/${section}`}> {langagueName(otherLangague(langage))} </Link></li>
