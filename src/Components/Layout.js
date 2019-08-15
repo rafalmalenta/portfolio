@@ -8,8 +8,8 @@ import Footer from "./Footer";
 import Skills from "../views/Skills";
 
 export default class Layout extends React.Component{
-constructor(){
-    super();  
+constructor(props){
+    super(props);  
     this.state={        
         content:{
             menu:{
@@ -55,16 +55,23 @@ switchLangague(langague){
     if (langague==="pl") array = ["en","pl"];
     else array = ["pl","en"];    
     this.setState({langague: array})
+};
+componentDidMount(){
+    //console.log(matchPath)
 }
-
-render(){           
+render(){     
     return(
         <Router>
             <Route exact path="/" render={() =>  <Redirect to="/pl/" />}
                 />              
             <Route path="/:lang/:section?" 
-                render={(props)=>
-                    <Menu { ...props } menu={this.state.content.menu} /> }                
+                render={(props)=>{
+                    let langague = props.match.params.lang;                      
+                    if((langague === "pl") || (langague==="en"))                                    
+                        return <Menu { ...props } menu={this.state.content.menu} />
+                    else 
+                        return <Redirect to="/pl/" />    
+                }}               
             />           
             <div class="viewcontainer ">
             <Route exact path="/:lang/" 
@@ -74,7 +81,7 @@ render(){
                 path="/:lang/skills" 
                 render={(props)=><Skills { ...props } skills={this.state.content.skills} />}
                 />            
-            <Route path="/portfolio/" component={Portfolio} />
+            <Route path="/:lang/portfolio/" component={Portfolio} />
             <Route path="/:lang/kontakt/"
                 render={(props)=><Contact {...props} />} 
                 />         

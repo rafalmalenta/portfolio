@@ -9,7 +9,7 @@ module.exports = {
   //context: path(__dirname,), 
   devtool: debug ? "inline-sourcemap" : null,
   entry: "./src/scripts.js",
-  mode: 'development',
+  mode: 'production',
   plugins:  [
      new HtmlWebpackPlugin({
       template: './src/index.html',

@@ -31,7 +31,7 @@ export default function Skills(props){
             <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">React
                <img width="100%" src="./assets/react.png" alt="react"></img> 
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6 text-center text-center rotate">Vue
+            <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">Vue
                <img width="100%" src="./assets/vue.png" alt="vue"></img> 
             </div>
          </div>
@@ -42,10 +42,10 @@ export default function Skills(props){
             <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">Webpack
                <img width="100%" src="./assets/webpack.png" alt="webpack"></img> 
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6 text-center text-center rotate">Node js
+            <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">Node js
                <img width="100%" src="./assets/node.png" alt="nodejs"></img> 
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6 text-center text-center rotate">npm
+            <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">npm
                <img width="100%" src="./assets/npm.png" alt="npm"></img> 
             </div>
           </div>  

@@ -3,7 +3,8 @@ import {HashRouter as Router, Link } from "react-router-dom";
 
 export default function Menu(props) { 
   //console.log(props.match)
-  var section = props.match.params.section || "";
+  var section = props.match.params.section;
+  console.log(props.match)
   var langage = props.match.params.lang;
   
   function toggleColapse() {    

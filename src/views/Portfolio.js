@@ -4,7 +4,7 @@ export default function Portfolio(){
     
     return(
        <div>
-           Moje dzieła
+           Moje dzieła d
        </div>
     )
   
