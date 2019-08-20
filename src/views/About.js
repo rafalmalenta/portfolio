@@ -19,11 +19,15 @@ function About(props){
     };   
     function render(){
             var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+            
+            var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+            
             var xax = document.getElementById("rendererFather");
             var renderer = new THREE.WebGLRenderer();
-            
-            renderer.setSize( xax.offsetWidth, xax.offsetWidth );
+            if(window.innerWidth < 700)
+                renderer.setSize( xax.offsetWidth, 2 * xax.offsetWidth );
+            else 
+                renderer.setSize( xax.offsetWidth, xax.offsetWidth );
             renderer.setClearColor( 0xffffff )
             
 			xax.appendChild( renderer.domElement );

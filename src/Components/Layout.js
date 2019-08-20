@@ -28,9 +28,8 @@ export default function Layout(){
         <Route 
             path="/:lang/skills" 
             render={(props)=><Skills { ...props }  />}
-            />            
-        <Route path="/:lang/portfolio/" component={Portfolio} />
-        <Route path="/:lang/kontakt/"
+            />        
+        <Route path="/:lang/Contact/"
             render={(props)=><Contact {...props} />} 
             />         
      </div> 
