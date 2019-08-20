@@ -28,7 +28,7 @@ export default function Skills(props){
             <h1>{skills.h1[langague]}</h1>
             <h2>{skills.h2[langague]}</h2>
          </div>
-         <div class="row d-flex justify-content-center">
+         <div class="row d-flex justify-content-center" >
             <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">HTML5
                <img width="100%" src="./assets/HTML5.png" alt="HTML5"></img>           
             </div>

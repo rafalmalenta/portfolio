@@ -20,14 +20,17 @@ function About(props){
     function render(){
             var scene = new THREE.Scene();
             
-            var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-            
+            var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );            
             var xax = document.getElementById("rendererFather");
             var renderer = new THREE.WebGLRenderer();
-            if(window.innerWidth < 700)
-                renderer.setSize( xax.offsetWidth, 2 * xax.offsetWidth );
-            else 
-                renderer.setSize( xax.offsetWidth, xax.offsetWidth );
+            // if(window.innerWidth < 1100 && window.innerWidth >600){
+            //     console.log(window.innerWidth)
+            //     renderer.setSize( xax.offsetWidth, 1.5 * xax.offsetWidth );
+            // }
+            // else if (window.innerWidth< 600)
+            // renderer.setSize( xax.offsetWidth, 3 * xax.offsetWidth );
+            // else 
+                renderer.setSize( xax.offsetWidth, window.innerHeight );
             renderer.setClearColor( 0xffffff )
             
 			xax.appendChild( renderer.domElement );

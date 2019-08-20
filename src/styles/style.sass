@@ -8,21 +8,25 @@ html
 body 
     margin-left: auto
     margin-right: auto
-    padding-top: 160px 
+    //padding-top: 160px 
     width: 100% 
     height: 100vh   
     position: relative 
     box-sizing: border-box
+   
 h1, h2 
   text-align: center
   padding-bottom: 25px
 nav
     font-size: 24px
+#app
+  width: 100%
 .nav-link
     text-align: center
 .footer
   padding-bottom: 40px
   font-size: 24px
+  z-index: 12443
 
 .navbar-toggler .bar1, .bar2, .bar3 
     width: 35px
@@ -30,7 +34,6 @@ nav
     background-color: #333
     margin: 6px 0
     transition: 0.4s
-
 
 .change .bar1 
   -webkit-transform: rotate(-45deg) translate(-9px, 6px) 
@@ -40,26 +43,38 @@ nav
 .change .bar3 
   -webkit-transform: rotate(45deg) translate(-8px, -8px) 
   transform: rotate(45deg) translate(-8px, -8px) 
-
-.viewcontainer  
-    width: 80%    
-    min-height: 70vh 
-    z-index: -22  
+.about
+  padding-top: 300px
+.viewcontainer 
+    position: relative 
+    width: 100% 
+    //margin-top: 100px   
+    min-height: 80vh 
+    //z-index: -2222  
     margin-left: auto
     margin-right: auto
+    >div
+      padding-top: 100px    
     
 .nopadding
   padding: 0px 0px 0px 0px
   
 .rotate
-  //opacity: 0
-  transition-duration: 4s
-  animation: rotate 3.5s infinite alternate
-  //background-image: radial-gradient(circle, red, blue, white, white)
-  z-index: -22
+  //opacity: 1
+  animation: rotate 8s 1 
+  //transition-duration: 4s  
+  //z-index: -22
+.rotate:hover  
+  cursor: pointer
+  opacity: 0.5
+#rendererFather
+  //overflow: visible
+  padding: 0px 0px 0px 0px
+  width: 100%  
 #rendererFather canvas 
+  margin: 0px 0px 0px 0px
   position: absolute
   top: 0px
-  z-index: -22
+  z-index: -23322
   width: 100%
   height: 100% 
