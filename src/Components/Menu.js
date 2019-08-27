@@ -8,8 +8,8 @@ export default function Menu(props) {
   
   const menu = {
     li:{
-        pl:["Umiejętności","Kontakt"],
-        en:["Skills","Contact"],
+        pl:["Umiejętności","Kontakt","Portfolio"],
+        en:["Skills","Contact","Portfolio"],
     },
   };
 
@@ -41,13 +41,16 @@ export default function Menu(props) {
         </button>
         <div class="collapse navbar-collapse" id="navbarColor03">
           <ul class="navbar-nav col-lg-12">
-            <li class="nav-item col-lg-4 ">
+            <li class="nav-item col-lg-3 ">
               <Link to= {`/${langage}/${menu.li['en'][0]}`} replace class="nav-link">{menu.li[langage][0]} </Link>
             </li>
-            <li class="nav-item col-lg-4">
+            <li class="nav-item col-lg-3">
               <Link to={`/${langage}/${menu.li['en'][1]}`} class="nav-link">{menu.li[langage][1]}</Link>
+            </li>  
+            <li class="nav-item col-lg-3">
+              <Link to={`/${langage}/${menu.li['en'][2]}`} class="nav-link">{menu.li[langage][2]}</Link>
             </li>            
-           <li class="nav-item col-lg-4" >
+           <li class="nav-item col-lg-3" >
            <Link class="nav-link" to={`/${otherLangague(langage)}/${section}`}> {langagueName(otherLangague(langage))} </Link></li>
           </ul>    
         </div>

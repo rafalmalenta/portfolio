@@ -21,17 +21,20 @@ export default function Layout(){
                     return <Redirect to="/pl/" />    
             }}               
         />           
-        <div class="viewcontainer ">
+        <div class="viewcontainer container">
         <Route exact path="/:lang/" 
             render={(props)=><About { ...props }  />}
             />    
         <Route 
-            path="/:lang/skills" 
+            path="/:lang/Skills" 
             render={(props)=><Skills { ...props }  />}
             />        
         <Route path="/:lang/Contact/"
             render={(props)=><Contact {...props} />} 
-            />         
+            />  
+        <Route path="/:lang/Portfolio/"
+            render={(props)=><Portfolio {...props} />} 
+            />             
      </div> 
      <Footer />      
     </Router>)

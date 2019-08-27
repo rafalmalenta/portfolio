@@ -30,7 +30,7 @@ function About(props){
             // else if (window.innerWidth< 600)
             // renderer.setSize( xax.offsetWidth, 3 * xax.offsetWidth );
             // else 
-                renderer.setSize( xax.offsetWidth, window.innerHeight );
+                renderer.setSize( xax.offsetWidth, (window.innerHeight+100) );
             renderer.setClearColor( 0xffffff )
             
 			xax.appendChild( renderer.domElement );
@@ -38,19 +38,26 @@ function About(props){
             var geometry = new THREE.ConeGeometry( 3, 3, 4 );
             var material = new THREE.MeshLambertMaterial ( { color: 0xffffff } );
             var cone = new THREE.Mesh( geometry, material );
-            material = new THREE.MeshLambertMaterial ( { color: 0x11ffff } );
+            material = new THREE.MeshLambertMaterial ( { color: 0xffffff } );
             var cone2 = new THREE.Mesh( geometry, material );
             cone2.rotation.x = 3.14;
             cone2.position.y = 1
            
             scene.add( cone );
             scene.add( cone2 )
-            var light = new THREE.PointLight( 0x11ffff, 1, 100 );
-            light.position.set( 3, 3, 3);
+            var light = new THREE.PointLight( 0xffffff, 1 , 100 );
+            light.position.set( 0, 0, 5);
             scene.add( light );
+            // light = new THREE.PointLight( 0xffffff, 1, 100 );
+            // light.position.set( 2, 0, 4);
+            // scene.add( light );
 
-            light = new THREE.PointLight( 0xffffff, 1, 100 );
-            light.position.set( -3, -3, 3 );
+            light = new THREE.PointLight( 0x5555ff, 1, 100 );
+            light.position.set( 4, 0, -1 );
+            scene.add( light );
+            light = new THREE.PointLight( 0xff5555, 1, 100 );
+            light.position.set( -4, 0, -1 );
+
             scene.add( light );
 			
 			camera.position.z = 6;

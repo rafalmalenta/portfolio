@@ -1,0 +1,63 @@
+
+.block
+    margin: 30px auto
+    display: block
+    overflow: hidden   
+    position: relative
+    font-size: 22px
+    min-height: 200px
+    *
+        display: block
+        overflow: hidden
+        transition-duration: .2s
+    .right, .left
+        width: 50%
+        position: absolute
+        left: 100%
+        height: 100%        
+        display: flex
+        align-items: center
+        justify-content: center
+           
+    .left
+        left: -50%     
+
+    .middle
+        width: 100%
+        position: absolute
+@media screen and ( min-width: 1025px  )        
+    .block:hover .left
+        z-index: 15
+        left: 0%
+        background-color: white 
+    .block:hover .right
+        z-index: 15
+        left: 50%
+        background-color: white 
+
+@media screen and ( max-width: 1024px  )
+    .block 
+        //height: 600px
+        //flex-direction: row
+    .block .middle      
+        position: absolute
+        top: 0px
+        left: 0px
+        width: 100%
+        height: 70%   
+    .block .left   
+        position: absolute
+        width: 50%        
+        left: 0% 
+        top: 70%
+        height: 30%
+    .block .right   
+        position: absolute
+        width: 50%        
+        left: 50% 
+        top: 70%
+        height: 30%
+
+
+        
+    

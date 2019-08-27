@@ -28,7 +28,7 @@ export default function Contact(props){
       }
    }
    function handleBlur(id){
-      console.log(`#${id}`)
+      //console.log(`#${id}`)
       var value = document.querySelectorAll(`#${id}`)[0].value;
       //console.log(name)
       if(value == ""){         
@@ -43,9 +43,7 @@ export default function Contact(props){
       }
    }
    function handleBlurp(id){
-      
-      var value = document.querySelectorAll(`#${id}`)[0].value;      
-      
+      var value = document.querySelectorAll(`#${id}`)[0].value;   
       var phoneRegExp = /^[0-9]{9}$/;
       console.log(phoneRegExp.test(value))
       if(!phoneRegExp.test(value)){
