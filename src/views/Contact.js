@@ -30,7 +30,6 @@ export default function Contact(props){
          pl:"Zdanie składa się conajmniej z 4 znaków",
          en:"Sentence contains at least 4 characters"
       },
-
       buttonValue:{
          pl:"Wyślij",
          en:"Submit"
@@ -54,7 +53,7 @@ export default function Contact(props){
          DomElement.style.borderColor= "green";
          return true;
       }
-   }
+   };
   
    function handleclick(e){
       e.preventDefault();   

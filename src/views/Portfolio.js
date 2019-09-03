@@ -25,6 +25,15 @@ export default function Portfolio(props){
             live:"http://rectask2.rafalmalenta.usermd.net/",
 
         },
+        {
+            decribtion : {
+                en: "Recruitment task from github, uses REST API of The Guardian magazine. Made in pure Vanilla.js",
+                pl: "Znalezione na githubie zadanie rekrutacyjne dla JS developera korzysta z api guardiana, wykonane w Vanilla.js.",
+            },
+            github: "https://github.com/rafalmalenta/sudh",
+            live:"http://sudh.rafalmalenta.usermd.net/",
+
+        }
     ];
 
     const list = PortfolioItems.map((item,index)=>{
