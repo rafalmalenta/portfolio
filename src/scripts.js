@@ -1,8 +1,8 @@
 import "./styles/style.sass";
 import React from "react";
 import ReactDOM from "react-dom";
-import "./assets/CSS3.png";
-import "./assets/HTML5.png";
+import "./assets/css3.png";
+import "./assets/html5.png";
 import "./assets/javascript.png";
 import "./assets/node.png";
 import "./assets/npm.png";

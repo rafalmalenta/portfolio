@@ -30,10 +30,10 @@ export default function Skills(props){
          </div>
          <div class="row d-flex justify-content-center" >
             <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">HTML5
-               <img width="100%" src="./assets/HTML5.png" alt="HTML5"></img>           
+               <img width="100%" src="./assets/html5.png" alt="HTML5"></img>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">CSS3
-               <img width="100%" src="./assets/CSS3.png" alt="CSS3"></img>    
+               <img width="100%" src="./assets/css3.png" alt="CSS3"></img>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6 text-center rotate">Java script
                <img width="100%" src="./assets/javascript.png" alt="javascript"></img> 
