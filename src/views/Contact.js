@@ -33,6 +33,10 @@ export default function Contact(props){
       buttonValue:{
          pl:"Wyślij",
          en:"Submit"
+      },
+      email:{
+         pl: "e-mail ukryty",
+         en: "e-mail hidden"
       }
    }
    const phoneRegExp = /^[0-9]{9}$/;
@@ -69,10 +73,14 @@ export default function Contact(props){
          alert("Its an fake form");
       }
    }
+   function showEMail(e){
+      e.preventDefault();
+      e.target.innerHTML = "rmalenta@wp.pl";
+   }
    var langague = props.match.params.lang;     
    return(
        <div class="container ">
-         <h1>{contact.header[langague]} <a href="mailto:rmalenta@wp.pl">rmalenta@wp.pl</a></h1>
+         <h1>{contact.header[langague]} <a href="#" onClick={()=>showEMail(event)}>{ contact.email[langague] }</a></h1>
          <h2>{contact.nextheader[langague]}</h2>         
          <div class="row d-flex justify-content-center">
             <form class="row csc" >

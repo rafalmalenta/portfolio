@@ -26,17 +26,24 @@ function About(props){
             renderer.setClearColor( 0xffffff )
             
 			xax.appendChild( renderer.domElement );
-
-            var geometry = new THREE.ConeGeometry( 3, 3, 4 );
+            var singleGeometry = new THREE.Geometry();
+            var cone = new THREE.ConeGeometry( 3, 3, 6 );
+            var coneMesh = new THREE.Mesh(cone);
             var material = new THREE.MeshLambertMaterial ( { color: 0xffffff } );
-            var cone = new THREE.Mesh( geometry, material );
-            material = new THREE.MeshLambertMaterial ( { color: 0xffffff } );
-            var cone2 = new THREE.Mesh( geometry, material );
-            cone2.rotation.x = 3.14;
-            cone2.position.y = 1
-           
-            scene.add( cone );
-            scene.add( cone2 )
+
+            var cone2 = new THREE.ConeGeometry( 3, 3, 6 );
+            cone2.rotateZ(3.14);
+            cone2.translate(0,1,0)
+
+            var coneMesh2 = new THREE.Mesh(cone2);
+            //coneMesh.updateMatrix(); // as needed
+            singleGeometry.merge(coneMesh.geometry, coneMesh.matrix);
+            //coneMesh2.updateMatrix(); // as needed
+            singleGeometry.merge(coneMesh2.geometry, coneMesh2.matrix);
+            var mesh = new THREE.Mesh(singleGeometry, material);
+
+
+            scene.add( mesh );
             var light = new THREE.PointLight( 0xffffff, 1 , 100 );
             light.position.set( 0, 0, 5);
             scene.add( light );
@@ -54,8 +61,9 @@ function About(props){
 
 			var animate = function () {
 				requestAnimationFrame( animate );
-                cone.rotation.y += 0.01;
-                cone2.rotation.y -= 0.01;
+				//scene.rotation.y +=0.01
+                mesh.rotation.y += 0.01;
+               //cone2.rotation.y -= 0.01;
 				renderer.render( scene, camera );
 			};
 
