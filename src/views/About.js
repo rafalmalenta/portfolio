@@ -16,13 +16,15 @@ function About(props){
             pl:"web developer",
             en:"web developer",
         }
-    };   
+    };
+
     function render(){
-            var scene = new THREE.Scene();            
-            var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );            
+            var scene = new THREE.Scene();
             var xax = document.getElementById("rendererFather");
+            var camera = new THREE.PerspectiveCamera( 75, xax.offsetWidth/window.innerHeight, 0.1, 1000 );
+
             var renderer = new THREE.WebGLRenderer();
-            renderer.setSize( xax.offsetWidth, (window.innerHeight+100) );
+            renderer.setSize( xax.offsetWidth, (window.innerHeight) );
             renderer.setClearColor( 0xffffff )
             
 			xax.appendChild( renderer.domElement );
@@ -47,7 +49,6 @@ function About(props){
             var light = new THREE.PointLight( 0xffffff, 1 , 100 );
             light.position.set( 0, 0, 5);
             scene.add( light );
-            
 
             light = new THREE.PointLight( 0x5555ff, 1, 100 );
             light.position.set( 4, 0, -1 );
@@ -59,19 +60,26 @@ function About(props){
 			
 			camera.position.z = 6;
 
-			var animate = function () {
-				requestAnimationFrame( animate );
+			var animate = function (time) {
+			    //console.log(renderer);
+                //time *= 0.001
+                //console.log(time)
+				requestAnimationFrame( animate);
 				//scene.rotation.y +=0.01
                 mesh.rotation.y += 0.01;
+                //mesh.rotation.x += x;
                //cone2.rotation.y -= 0.01;
 				renderer.render( scene, camera );
-			};
 
-			animate();       
-    };   
-    
+			};
+            requestAnimationFrame(animate);
+    };
+    function f(e) {
+
+        //console.log(e)
+    }
     return(
-        <div id="rendererFather" class="container">
+        <div id="rendererFather" class="container" onClick={event => f(event) }>
             <div class="about">
                 <h1>{about.h1[langague]}</h1>
                 <h2>{about.h2[langague]}</h2>

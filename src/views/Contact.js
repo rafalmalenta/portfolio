@@ -37,6 +37,10 @@ export default function Contact(props){
       email:{
          pl: "e-mail ukryty",
          en: "e-mail hidden"
+      },
+      alert:{
+         pl: "ten formularz jest tylko do zabawy",
+         en: "its fake form"
       }
    }
    const phoneRegExp = /^[0-9]{9}$/;
@@ -69,8 +73,8 @@ export default function Contact(props){
          (validateInput("phone",phoneRegExp, contact.invalidPhoneLabel[langague])) && 
          (validateInput("message",regExp, contact.invalidTextLabel[langague] ))
       ){
-         console.log("jestem")
-         alert("Its an fake form");
+
+         alert(`${contact.alert[langague]}`);
       }
    }
    function showEMail(e){

@@ -6,11 +6,19 @@ export default function Portfolio(props){
     var PortfolioItems = [
         {
             decribtion : {
-                en: `My newes full stack project under development bidding app made with symfony and docrine.`,
-                pl: `Mój najnowszy full stackowy projekt wykonywany w symfony 4 i doctrine.`,
+                en: `Front end app made with react, redux, styled-components, fetches movies from movie .`,
+                pl: `Frontendowa apka z wykorzystaniem react, redux, styled-components.`,
             },
-            github: `https://github.com/rafalmalenta/bidding_app`,
-            live:`http://ba.rafalmalenta.usermd.net/`,
+            github: `https://github.com/rafalmalenta/developers/tree/master/Frontend`,
+            live:`http://mews.rafalmalenta.usermd.net/`,
+        },
+        {
+            decribtion : {
+                en: `Front end app made with angular it fetches 10 most polluted cities from given country and then their describtion from wikipedia .`,
+                pl: `Frontendowa apka z wykorzystaniem angulara pobiera 10 najbardziej zanieczyszczonych miast z podenago kraju a potem ich opis z wikipedii.`,
+            },
+            github: `https://github.com/rafalmalenta/pollution-app`,
+            live:`http://somerec.rafalmalenta.usermd.net/`,
         },
         {
             decribtion : {
